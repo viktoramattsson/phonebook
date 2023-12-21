@@ -1,4 +1,4 @@
-import './PhonebookModal.css';
+import './modal.css';
 
 interface PhonebookProps {
   onClose: () => void;

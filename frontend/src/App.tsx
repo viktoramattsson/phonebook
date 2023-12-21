@@ -5,18 +5,20 @@ import AdminModal from './Components/AdminModal';
 
 
 function App() {
-  const [isPhonebookModalOpen, setPhonebookModalOpen] = useState(false);
-  const [isAdminModalOpen, setAdminModalOpen] = useState(false);
+  const [isPhonebookModalOpen, setPhonebookModalOpen] = useState<boolean>(false);
+  const [isAdminModalOpen, setAdminModalOpen] = useState<boolean>(false);
 
   function openPhonebook() {
     setPhonebookModalOpen(true);
+    setAdminModalOpen(false)
   }
   function closePhonebook() {
     setPhonebookModalOpen(false);
   }
   function openAdmin() {
     setAdminModalOpen(true)
-    console.log("Klickar på administratör");
+    setPhonebookModalOpen(false)
+
   }
   function closeAdmin(){
     setAdminModalOpen(false)
