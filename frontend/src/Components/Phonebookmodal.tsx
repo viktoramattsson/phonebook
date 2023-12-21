@@ -1,5 +1,4 @@
-import  { useEffect, useState } from 'react';
-
+import { useEffect, useState } from 'react';
 import './modal.css';
 
 interface PhonebookProps {
@@ -7,9 +6,9 @@ interface PhonebookProps {
 }
 
 interface numbers {
-  id: number,
-  name: string,
-  number: string
+  id: number;
+  name: string;
+  number: string;
 }
 
 function PhonebookModal({ onClose }: PhonebookProps): JSX.Element {
@@ -29,10 +28,31 @@ function PhonebookModal({ onClose }: PhonebookProps): JSX.Element {
     fetchData();
   }, []);
 
+  const formatNumber = (number: string): string => {
+    const firstFourDigits = number.slice(0, 4);
+    const remainingDigits = number.slice(4);
+    return `${firstFourDigits} - ${remainingDigits}`;
+  };
+
   return (
     <div className="modal">
-      <h2>Phonebook modal!</h2>
-      <p>{data && data.length>0 && data[0].name}</p>
+      <h2>Your contacts</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data?.map((entry) => (
+            <tr key={entry.id}>
+              <td>{entry.name}</td>
+              <td>{formatNumber(entry.number)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
       <button onClick={onClose}>Close</button>
     </div>
   );
