@@ -39,6 +39,19 @@ app.post('/add', async (request, response) => {
   }
 });
 
+app.delete('/delete', async (request, response) => {
+  try {
+    const { name } = request.body as { name: string };
+
+    await client.query('DELETE from numbers Where name =$1', [name]);
+
+    response.status(200).send({ message: 'Contact deleted' });
+  } catch (error) {
+    console.error('Error adding data to database:', error);
+    response.status(500).send({ error: 'Internal Server Error' });
+  }
+});
+
 app.listen(3000, () => {
   console.log('Webbtjänsten kan nu ta emot anrop.');
 });
