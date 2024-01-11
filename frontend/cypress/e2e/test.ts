@@ -1,7 +1,10 @@
 import { When, Then, Given } from '@badeball/cypress-cucumber-preprocessor';
 
-Given('Jag är på admin-sidan', () => {
+Given('Jag är inloggad och på admin-sidan', () => {
   cy.visit('http://localhost:5173/');
+  cy.get('input[placeholder="Username"]').type('viktor');
+  cy.get('input[placeholder="Password"]').type('passpass');
+  cy.get('form').submit();
   cy.contains('button', 'Add numbers').click();
 });
 

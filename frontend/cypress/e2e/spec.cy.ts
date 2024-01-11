@@ -1,6 +1,9 @@
 describe('Test landing page', function () {
   it('visits my site and checks that h1 and correct buttons are in place ', function () {
     cy.visit('http://localhost:5173/');
+    cy.get('input[placeholder="Username"]').type('viktor');
+    cy.get('input[placeholder="Password"]').type('passpass');
+    cy.get('form').submit();
     cy.get('h1').should('exist');
 
     cy.contains('button', 'Phonebook').should('exist');
@@ -11,6 +14,9 @@ describe('Test landing page', function () {
 describe('Test landing page functions', function () {
   it('visits my site and checks button functions ', function () {
     cy.visit('http://localhost:5173/');
+    cy.get('input[placeholder="Username"]').type('viktor');
+    cy.get('input[placeholder="Password"]').type('passpass');
+    cy.get('form').submit();
 
     cy.contains('button', 'Phonebook').should('exist').click();
     cy.get('.modal').should('exist');
