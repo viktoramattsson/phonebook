@@ -63,31 +63,22 @@ function AdminModal({ onClose }: AdminProps) {
       <div className="modal">
         <h2>Add number</h2>
         <form className="postForm" onSubmit={handleAdd}>
-          <label>
-            Name:
-            <input
-              type="text"
-              placeholder="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-          </label>
-          <label>
-            Number:
-            <input
-              type="text"
-              placeholder="number"
-              value={number}
-              onChange={(e) => setNumber(e.target.value)}
-            />
-          </label>
+          <input
+            type="text"
+            placeholder="name"
+            onChange={(e) => setName(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="number"
+            onChange={(e) => setNumber(e.target.value)}
+          />
           <button type="submit">Add</button>
         </form>
         <form className="deleteForm" onSubmit={handleDelete}>
           <input
             type="text"
             placeholder="Name to delete"
-            value={name}
             onChange={(e) => setName(e.target.value)}
           />
           <button type="submit">Delete</button>

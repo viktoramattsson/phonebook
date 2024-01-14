@@ -11,7 +11,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ parentCallback }) => {
 
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
-  const [isLogin, setIsLogin] = useState<boolean>(false);
+  // const [isLogin, setIsLogin] = useState<boolean>(false);
 
   function handleUsernameChange(event: React.ChangeEvent<HTMLInputElement>) {
     setUsername(event.target.value);
@@ -25,7 +25,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ parentCallback }) => {
     event.preventDefault();
 
     if (username === registeredUser && password === registeredPassword) {
-      setIsLogin(true);
+      // setIsLogin(true);
       parentCallback(true);
       console.log('Login successful');
     }
@@ -49,7 +49,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ parentCallback }) => {
               value={password}
               onChange={handlePasswordChange}
             />
-            <button type="submit">Submit</button>
+            <button type="submit">Go!</button>
           </form>
         </div>
       </div>

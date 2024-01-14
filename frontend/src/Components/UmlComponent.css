@@ -1,0 +1,17 @@
+.uml {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 8px;
+  height: 50%;
+  width: 50%;
+  margin: 0 auto;
+}
+.close {
+  width: 200px;
+  margin: 10px auto;
+}
+
+img {
+  margin: 10px;
+}

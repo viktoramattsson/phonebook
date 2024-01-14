@@ -1,7 +1,6 @@
 .modal {
-  width: 700px;
-  height: 400px;
-  background-color: rgb(194, 190, 190);
+  background-color: rgba(0, 0, 0, 0.5); /* Transparent black background */
+  color: whitesmoke;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -15,9 +14,11 @@
 
 input {
   width: 50%;
+  margin: 5px auto; /* Center the input horizontally */
+  padding: 10px;
 }
 button {
-  width: 20rem;
+  width: 25rem;
 }
 table {
   width: 50%;
